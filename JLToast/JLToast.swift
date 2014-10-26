@@ -19,6 +19,10 @@
 
 import UIKit
 
+public enum JLToastPosition {
+	case Top, Bottom
+}
+
 public struct JLToastDelay {
     public static let ShortDelay: NSTimeInterval = 2.0
     public static let LongDelay: NSTimeInterval = 3.5
@@ -70,22 +74,15 @@ public struct JLToastViewValue {
     var _finished: Bool = false
     
     
-    public class func makeText(text: String) -> JLToast {
-        return JLToast.makeText(text, delay: 0, duration: JLToastDelay.ShortDelay)
+	public class func makeText(text:String, position:JLToastPosition = JLToastPosition.Top, duration:NSTimeInterval = JLToastDelay.ShortDelay, delay:NSTimeInterval = 0) -> JLToast {
+		var toast = JLToast()
+		toast.text = text
+		toast._view?._position = position
+		toast.delay = delay
+		toast.duration = duration
+		return toast
     }
-    
-    public class func makeText(text: String, duration: NSTimeInterval) -> JLToast {
-        return JLToast.makeText(text, delay: 0, duration: duration)
-    }
-    
-    public class func makeText(text: String, delay: NSTimeInterval, duration: NSTimeInterval) -> JLToast {
-        var toast = JLToast()
-        toast.text = text
-        toast.delay = delay
-        toast.duration = duration
-        return toast
-    }
-    
+	
     override init() {
         _view = JLToastView()
     }
@@ -106,9 +103,9 @@ public struct JLToastViewValue {
         executing = true
         
         dispatch_async(dispatch_get_main_queue(), { () in
-            self._view!.updateView()
-            self._view!.alpha = 0
-            UIApplication.sharedApplication().keyWindow.subviews.first?.addSubview(self._view!)
+			self._view!.updateView()
+			self._view!.alpha = 0
+			UIApplication.sharedApplication().keyWindow?.subviews.first?.addSubview(self._view!)
             UIView.animateWithDuration(0.5,
                 delay: self.delay!,
                 options: UIViewAnimationOptions.BeginFromCurrentState,
