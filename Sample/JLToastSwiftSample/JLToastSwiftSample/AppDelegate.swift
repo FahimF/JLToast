@@ -22,15 +22,14 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window!.backgroundColor = UIColor.whiteColor()
-        self.window!.rootViewController = RootViewController()
-        self.window!.makeKeyAndVisible()
+		// Configure JLToast
+		let opt = JLToastConfig.sharedInstance()
+		opt.bgColour = UIColor(red:0.61, green:0.953, blue:0.979, alpha:1.0)
+		opt.borderColour = UIColor(red:0.0, green:0.341, blue:0.678, alpha:1.0)
+		opt.textColour = UIColor.blackColor()
         return true
     }
 }

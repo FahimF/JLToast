@@ -1,6 +1,6 @@
 # JLToast - Written in Swift
 
-**JLToast** makes it easy to use Toast in iOS with very simple interface.
+This is a fork of the original **JLToast** which adds some additional functionality missing from the original project. **JLToast** makes it easy to use Toast in iOS with very simple interface. This fork also allows you to globally configure the appearance of your toast and to specify the position on screen where the toast will appear.
 
 
 ## At a glance
@@ -14,12 +14,7 @@ JLToast.makeText("Some text").show()
 
 ## Installation
 
-Use [CocoaPods](http://cocoapods.org). Required `Swift`.
-
-```pod
-pod 'JLToast'
-```
-
+Add all the files from the JLToast sub-folder to your project. Check the included Swift and Objective-C sample projects to see examples if you run into any issues.
 
 ## Setting duration and delay
 
@@ -38,4 +33,4 @@ How easy!
 <br />
 ![Third Screenshot](https://raw.github.com/Joyfl/JLToast/master/Screenshots/JLToast-Screenshot-3.png)
 
-JLToast is under [WTFPL](http://www.wtfpl.net/). You can do what the fuck you want with JLToast.
+This fork of JLToast is under DWYWPL - Do What You Will Public License :) Do whatever you want either personally or commercially with the code but if you'd like, feel free to attribute in your app.

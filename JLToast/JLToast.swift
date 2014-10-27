@@ -10,20 +10,7 @@
 
 import UIKit
 
-public enum JLToastPosition {
-	case Top, Bottom
-}
-
-public struct JLToastDelay {
-    public static let ShortDelay: NSTimeInterval = 2.0
-    public static let LongDelay: NSTimeInterval = 3.5
-}
-
 public struct JLToastViewValue {
-    static var FontSize: CGFloat {
-        get { return UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone ? 12 : 16 }
-    }
-    
     static var PortraitOffsetY: CGFloat {
         get { return UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone ? 30 : 60 }
     }
@@ -35,12 +22,6 @@ public struct JLToastViewValue {
 
 @objc public class JLToast: NSOperation {
     var _view: JLToastView?
-    
-    var text: String {
-        get { return _view!._textLabel!.text! }
-        set { _view!._textLabel!.text = newValue }
-    }
-
     var delay: NSTimeInterval?
     var duration: NSTimeInterval?
     
@@ -63,21 +44,32 @@ public struct JLToastViewValue {
         }
     }
     var _finished: Bool = false
-    
-    
-	public class func makeText(text:String, position:JLToastPosition = JLToastPosition.Top, duration:NSTimeInterval = JLToastDelay.ShortDelay, delay:NSTimeInterval = 0) -> JLToast {
-		var toast = JLToast()
-		toast.text = text
-		toast._view?._position = position
-		toast.delay = delay
-		toast.duration = duration
+
+	public class func makeText(text:String, position:Int = JLToastConfig.positionDefault, duration:NSTimeInterval = JLToastConfig.durationDefault, delay:NSTimeInterval = JLToastConfig.delayDefault) -> JLToast {
+		let toast = JLToast(text:text, position:position, duration:duration, delay:delay)
 		return toast
     }
+
+	// For calling from Objective-C
+	public class func makeText(text:String) -> JLToast {
+		return makeText(text, position:JLToastConfig.positionDefault, duration: JLToastConfig.durationDefault, delay: JLToastConfig.delayDefault)
+	}
+
+	public class func makeText(text:String, duration:NSTimeInterval) -> JLToast {
+		return makeText(text, position:JLToastConfig.positionDefault, duration:duration, delay: JLToastConfig.delayDefault)
+	}
+
+	public class func makeText(text:String, duration:NSTimeInterval, delay:NSTimeInterval) -> JLToast {
+		return makeText(text, position:JLToastConfig.positionDefault, duration:duration, delay:delay)
+	}
 	
-    override init() {
-        _view = JLToastView()
+    init(text:String, position:Int, duration:NSTimeInterval, delay:NSTimeInterval) {
+		let opt = JLToastConfig.sharedInstance()
+		self.duration = duration == JLToastConfig.durationDefault ? opt.duration : duration
+		self.delay = delay == JLToastConfig.delayDefault ? opt.delay : delay
+		_view = JLToastView(text:text, position:position)
     }
-    
+	
     public func show() {
         JLToastCenter.defaultCenter().addToast(self)
     }

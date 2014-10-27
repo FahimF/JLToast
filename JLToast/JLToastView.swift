@@ -9,53 +9,59 @@
  */
 
 import UIKit
+import QuartzCore
 
 @objc public class JLToastView: UIView {
+    var vwBG = UIView()
+    var lblToast = UILabel(frame:CGRectMake(0, 0, 100, 100))
+    var insetText = UIEdgeInsetsMake(6, 10, 6, 10)
+	var position:Int!
     
-    var _backgroundView: UIView?
-    var _textLabel: UILabel?
-    var _textInsets: UIEdgeInsets?
-	var _position = JLToastPosition.Top
-    
-    override init() {
+	init(text:String, position:Int) {
         super.init(frame: CGRectMake(0, 0, 100, 100))
-        _backgroundView = UIView(frame: self.bounds)
-        _backgroundView!.backgroundColor = UIColor(white: 0, alpha: 0.7)
-        _backgroundView!.layer.cornerRadius = 5
-        _backgroundView!.clipsToBounds = true
-        self.addSubview(_backgroundView!)
+		let opt = JLToastConfig.sharedInstance()
+		self.position = position == JLToastConfig.positionDefault ? opt.position : position
+        vwBG.frame = self.bounds
+        vwBG.backgroundColor = opt.bgColour
+		vwBG.layer.cornerRadius = 5
+		vwBG.layer.borderColor = opt.borderColour.CGColor
+		vwBG.layer.borderWidth = opt.borderWidth
+		if opt.showShadow {
+			vwBG.layer.shadowOffset = CGSize(width:2.0, height:2.0)
+			vwBG.layer.shadowOpacity = opt.shadowOpacity
+		}
+//        vwBG.clipsToBounds = true
+        self.addSubview(vwBG)
         
-        _textLabel = UILabel(frame: CGRectMake(0, 0, 100, 100))
-        _textLabel!.textColor = UIColor.whiteColor()
-        _textLabel!.backgroundColor = UIColor.clearColor()
-        _textLabel!.font = UIFont.systemFontOfSize(JLToastViewValue.FontSize)
-        _textLabel!.numberOfLines = 0
-        _textLabel!.textAlignment = NSTextAlignment.Center;
-        self.addSubview(_textLabel!)
-        
-        _textInsets = UIEdgeInsetsMake(6, 10, 6, 10)
+        lblToast.textColor = opt.textColour
+        lblToast.backgroundColor = UIColor.clearColor()
+        lblToast.font = UIFont.systemFontOfSize(opt.textSize)
+        lblToast.numberOfLines = 0
+        lblToast.textAlignment = NSTextAlignment.Center;
+		lblToast.text = text
+        self.addSubview(lblToast)
     }
-    
-    required convenience public init(coder aDecoder: NSCoder) {
-        self.init()
-    }
+
+	required public init(coder aDecoder:NSCoder) {
+	    fatalError("init(coder:) has not been implemented")
+	}
     
     func updateView() {
         let deviceWidth = CGRectGetWidth(UIScreen.mainScreen().bounds)
-        let font = self._textLabel!.font
+        let font = self.lblToast.font
         let constraintSize = CGSizeMake(deviceWidth * (280.0 / 320.0), CGFloat.max)
-        var textLabelSize = self._textLabel!.sizeThatFits(constraintSize)
-        self._textLabel!.frame = CGRect(
-            x: self._textInsets!.left,
-            y: self._textInsets!.top,
+        var textLabelSize = self.lblToast.sizeThatFits(constraintSize)
+        self.lblToast.frame = CGRect(
+            x: self.insetText.left,
+            y: self.insetText.top,
             width: textLabelSize.width,
             height: textLabelSize.height
         )
-        self._backgroundView!.frame = CGRect(
+        self.vwBG.frame = CGRect(
             x: 0,
             y: 0,
-            width: self._textLabel!.frame.size.width + self._textInsets!.left + self._textInsets!.right,
-            height: self._textLabel!.frame.size.height + self._textInsets!.top + self._textInsets!.bottom
+            width: self.lblToast.frame.size.width + self.insetText.left + self.insetText.right,
+            height: self.lblToast.frame.size.height + self.insetText.top + self.insetText.bottom
         )
         
 		var x: CGFloat
@@ -63,8 +69,8 @@ import UIKit
 		var wd:CGFloat
 		var ht:CGFloat
 		
-		var width = self._backgroundView!.frame.size.width
-		var height = self._backgroundView!.frame.size.height
+		var width = vwBG.frame.size.width
+		var height = vwBG.frame.size.height
 		let sz = UIScreen.mainScreen().bounds.size
 		let orientation = UIApplication.sharedApplication().statusBarOrientation
 		let sver = UIDevice.currentDevice().systemVersion as NSString
@@ -83,7 +89,7 @@ import UIKit
 			}
 		}
 		x = (wd - width) * 0.5
-		if _position == JLToastPosition.Bottom {
+		if position == JLToastConfig.positionBottom {
 			y = ht - (height + y)
 		}
         self.frame = CGRectMake(x, y, width, height);
