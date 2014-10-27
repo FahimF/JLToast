@@ -15,6 +15,7 @@
 		DD0FD3FF19FDC4FA00B4E1D1 /* JLToastConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FD3FE19FDC4FA00B4E1D1 /* JLToastConfig.swift */; };
 		DD0FD40319FDD96800B4E1D1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0FD40219FDD96800B4E1D1 /* Storyboard.storyboard */; };
 		DD0FD40619FDD9AA00B4E1D1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0FD40519FDD9AA00B4E1D1 /* RootViewController.m */; };
+		DDA6993C19FE1360006E8DBE /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA6993B19FE1360006E8DBE /* Image.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DD0FD40219FDD96800B4E1D1 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		DD0FD40419FDD9AA00B4E1D1 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		DD0FD40519FDD9AA00B4E1D1 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		DDA6993B19FE1360006E8DBE /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				DD0FD40419FDD9AA00B4E1D1 /* RootViewController.h */,
 				DD0FD40519FDD9AA00B4E1D1 /* RootViewController.m */,
 				DD0FD40219FDD96800B4E1D1 /* Storyboard.storyboard */,
+				DDA6993B19FE1360006E8DBE /* Image.xcassets */,
 				03106A29199E04D0002886D2 /* JLToast */,
 				03106A06199E0347002886D2 /* Supporting Files */,
 			);
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD0FD40319FDD96800B4E1D1 /* Storyboard.storyboard in Resources */,
+				DDA6993C19FE1360006E8DBE /* Image.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,7 +5,6 @@
  * Branched and modified by Fahim Farook 2014 to add additional functionality which did
  * not meet with original author's requirements/specifications
  *
- *
  */
 
 import UIKit
@@ -45,22 +44,22 @@ public struct JLToastViewValue {
     }
     var _finished: Bool = false
 
-	public class func makeText(text:String, position:Int = JLToastConfig.positionDefault, duration:NSTimeInterval = JLToastConfig.durationDefault, delay:NSTimeInterval = JLToastConfig.delayDefault) -> JLToast {
+	public class func makeText(text:String, duration:NSTimeInterval = JLToastConfig.durationDefault, delay:NSTimeInterval = JLToastConfig.delayDefault, position:Int) -> JLToast {
 		let toast = JLToast(text:text, position:position, duration:duration, delay:delay)
 		return toast
     }
 
 	// For calling from Objective-C
 	public class func makeText(text:String) -> JLToast {
-		return makeText(text, position:JLToastConfig.positionDefault, duration: JLToastConfig.durationDefault, delay: JLToastConfig.delayDefault)
+		return makeText(text, duration: JLToastConfig.durationDefault, delay: JLToastConfig.delayDefault, position:JLToastConfig.positionDefault)
 	}
 
 	public class func makeText(text:String, duration:NSTimeInterval) -> JLToast {
-		return makeText(text, position:JLToastConfig.positionDefault, duration:duration, delay: JLToastConfig.delayDefault)
+		return makeText(text, duration:duration, delay: JLToastConfig.delayDefault, position:JLToastConfig.positionDefault)
 	}
 
 	public class func makeText(text:String, duration:NSTimeInterval, delay:NSTimeInterval) -> JLToast {
-		return makeText(text, position:JLToastConfig.positionDefault, duration:duration, delay:delay)
+		return makeText(text, duration:duration, delay:delay, position:JLToastConfig.positionDefault)
 	}
 	
     init(text:String, position:Int, duration:NSTimeInterval, delay:NSTimeInterval) {
