@@ -1,6 +1,8 @@
 # JLToast - Written in Swift
 
-This is a fork of the original **JLToast** which adds some additional functionality missing from the original project. **JLToast** makes it easy to use Toast in iOS with very simple interface. This fork also allows you to globally configure the appearance of your toast and to specify the position on screen where the toast will appear.
+This is a fork of the original **JLToast** which adds some additional functionality missing from the original project. 
+
+**JLToast** makes it easy to use Toast in iOS with very simple interface. This fork also allows you to globally configure the appearance of your toast and to specify the position on screen where the toast will appear.
 
 
 ## At a glance
@@ -11,6 +13,7 @@ Just see below:
 JLToast.makeText("Some text").show()
 ```
 
+To configure **JLToast**, just get an instance of the `JLToastConfig` global object and then set the properties that you want on it. Those properties will be used throughought your app in creating new **JLTotast** instances.
 
 ## Installation
 

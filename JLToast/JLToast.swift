@@ -21,8 +21,8 @@ public struct JLToastViewValue {
 
 @objc public class JLToast: NSOperation {
     var _view: JLToastView?
-    var delay: NSTimeInterval?
-    var duration: NSTimeInterval?
+    private var delay: NSTimeInterval?
+    private var duration: NSTimeInterval?
     
     override public var executing: Bool {
         get { return _executing }
