@@ -1,6 +1,6 @@
 //
-//  JLToastConfig.swift
-//  JLToast
+//  ToastConfig.swift
+//  SwiftToast
 //
 //  Created by Fahim Farook on 10/27/14.
 //  Copyright (c) 2014 Fahim Farook. All rights reserved.
@@ -8,21 +8,21 @@
 
 import UIKit
 
-@objc public class JLToastConfig: NSObject {
+@objc public class ToastConfig: NSObject {
 	// Constants
 	let isPhone = UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone
 	
 	// Variables
-	var duration:NSTimeInterval!
-	var delay:NSTimeInterval!
-	var position:Int!
-	var bgColour = UIColor.blackColor()
-	var borderColour = UIColor.grayColor()
-	var borderWidth:CGFloat = 1.0
-	var showShadow = true
-	var shadowOpacity:Float = 0.7
-	var textColour = UIColor.whiteColor()
-	var baseSize:CGFloat = 14
+	public var duration:NSTimeInterval!
+	public var delay:NSTimeInterval!
+	public var position:Int!
+	public var bgColour = UIColor.blackColor()
+	public var borderColour = UIColor.grayColor()
+	public var borderWidth:CGFloat = 1.0
+	public var showShadow = true
+	public var shadowOpacity:Float = 0.7
+	public var textColour = UIColor.whiteColor()
+	public var baseSize:CGFloat = 14
 
 	var textSize:CGFloat {
 		get {
@@ -38,11 +38,11 @@ import UIKit
 	}
 	
 	struct Static {
-		static var instance:JLToastConfig? = nil
+		static var instance:ToastConfig? = nil
 		static var token:dispatch_once_t = 0
 	}
 	
-	class func sharedInstance() -> JLToastConfig! {
+	public class func sharedInstance() -> ToastConfig! {
 		dispatch_once(&Static.token) {
 			Static.instance = self()
 		}
@@ -99,8 +99,8 @@ import UIKit
 	required override public init() {
 		assert(Static.instance == nil, "Singleton already initialized!")
 		super.init()
-		duration = JLToastConfig.durationShort
-		delay = JLToastConfig.delayNone
-		position = JLToastConfig.positionBottom
+		duration = ToastConfig.durationShort
+		delay = ToastConfig.delayNone
+		position = ToastConfig.positionBottom
 	}
 }

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:JLToastObjcSample.xcodeproj">
+      location = "self:SwiftToastSwiftSample.xcodeproj">
    </FileRef>
 </Workspace>

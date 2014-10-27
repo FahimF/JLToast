@@ -30,10 +30,10 @@ How easy!
 
 ## Screenshots
 
-![First Screenshot](https://raw.github.com/FahimF/JLToast/master/Screenshots/JLToast-Screenshot-1.png)
+![First Screenshot](https://raw.github.com/FahimF/JLToast/master/Screenshots/SwiftToast-Screenshot-1.png)
 <br />
-![Second Screenshot](https://raw.github.com/FahimF/JLToast/master/Screenshots/JLToast-Screenshot-2.png)
+![Second Screenshot](https://raw.github.com/FahimF/JLToast/master/Screenshots/SwiftToast-Screenshot-2.png)
 <br />
-![Third Screenshot](https://raw.github.com/FahimF/JLToast/master/Screenshots/JLToast-Screenshot-3.png)
+![Third Screenshot](https://raw.github.com/FahimF/JLToast/master/Screenshots/SwiftToast-Screenshot-3.png)
 
 This fork of JLToast is under DWYWPL - Do What You Will Public License :) Do whatever you want either personally or commercially with the code but if you'd like, feel free to attribute in your app.

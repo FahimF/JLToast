@@ -10,23 +10,19 @@
 		031069D5199E0100002886D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031069D4199E0100002886D2 /* AppDelegate.swift */; };
 		031069DC199E0100002886D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031069DB199E0100002886D2 /* Images.xcassets */; };
 		031069F2199E0128002886D2 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031069F1199E0128002886D2 /* RootViewController.swift */; };
-		031069F7199E0148002886D2 /* JLToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031069F4199E0148002886D2 /* JLToast.swift */; };
-		031069F8199E0148002886D2 /* JLToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031069F5199E0148002886D2 /* JLToastCenter.swift */; };
-		031069F9199E0148002886D2 /* JLToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031069F6199E0148002886D2 /* JLToastView.swift */; };
-		DD0FD3FC19FDB4A800B4E1D1 /* JLToastConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FD3FB19FDB4A800B4E1D1 /* JLToastConfig.swift */; };
+		031069F7199E0148002886D2 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031069F4199E0148002886D2 /* Toast.swift */; };
+		DD0FD3FC19FDB4A800B4E1D1 /* ToastConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FD3FB19FDB4A800B4E1D1 /* ToastConfig.swift */; };
 		DD0FD40119FDD84000B4E1D1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0FD40019FDD84000B4E1D1 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		031069CF199E0100002886D2 /* JLToastSwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLToastSwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		031069CF199E0100002886D2 /* SwiftToastSwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftToastSwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		031069D3199E0100002886D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		031069D4199E0100002886D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		031069DB199E0100002886D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		031069F1199E0128002886D2 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		031069F4199E0148002886D2 /* JLToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToast.swift; sourceTree = "<group>"; };
-		031069F5199E0148002886D2 /* JLToastCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToastCenter.swift; sourceTree = "<group>"; };
-		031069F6199E0148002886D2 /* JLToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToastView.swift; sourceTree = "<group>"; };
-		DD0FD3FB19FDB4A800B4E1D1 /* JLToastConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToastConfig.swift; sourceTree = "<group>"; };
+		031069F4199E0148002886D2 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		DD0FD3FB19FDB4A800B4E1D1 /* ToastConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastConfig.swift; sourceTree = "<group>"; };
 		DD0FD40019FDD84000B4E1D1 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,7 +40,7 @@
 		031069C6199E0100002886D2 = {
 			isa = PBXGroup;
 			children = (
-				031069D1199E0100002886D2 /* JLToastSwiftSample */,
+				031069D1199E0100002886D2 /* SwiftToastSwiftSample */,
 				031069D0199E0100002886D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,22 +48,22 @@
 		031069D0199E0100002886D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				031069CF199E0100002886D2 /* JLToastSwiftSample.app */,
+				031069CF199E0100002886D2 /* SwiftToastSwiftSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		031069D1199E0100002886D2 /* JLToastSwiftSample */ = {
+		031069D1199E0100002886D2 /* SwiftToastSwiftSample */ = {
 			isa = PBXGroup;
 			children = (
 				031069D4199E0100002886D2 /* AppDelegate.swift */,
 				031069F1199E0128002886D2 /* RootViewController.swift */,
 				DD0FD40019FDD84000B4E1D1 /* Storyboard.storyboard */,
 				031069DB199E0100002886D2 /* Images.xcassets */,
-				031069F3199E0148002886D2 /* JLToast */,
+				031069F3199E0148002886D2 /* SwiftToast */,
 				031069D2199E0100002886D2 /* Supporting Files */,
 			);
-			path = JLToastSwiftSample;
+			path = SwiftToastSwiftSample;
 			sourceTree = "<group>";
 		};
 		031069D2199E0100002886D2 /* Supporting Files */ = {
@@ -78,24 +74,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		031069F3199E0148002886D2 /* JLToast */ = {
+		031069F3199E0148002886D2 /* SwiftToast */ = {
 			isa = PBXGroup;
 			children = (
-				031069F4199E0148002886D2 /* JLToast.swift */,
-				031069F5199E0148002886D2 /* JLToastCenter.swift */,
-				031069F6199E0148002886D2 /* JLToastView.swift */,
-				DD0FD3FB19FDB4A800B4E1D1 /* JLToastConfig.swift */,
+				031069F4199E0148002886D2 /* Toast.swift */,
+				DD0FD3FB19FDB4A800B4E1D1 /* ToastConfig.swift */,
 			);
-			name = JLToast;
-			path = ../../../JLToast;
+			name = SwiftToast;
+			path = ../../../SwiftToast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		031069CE199E0100002886D2 /* JLToastSwiftSample */ = {
+		031069CE199E0100002886D2 /* SwiftToastSwiftSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 031069EB199E0100002886D2 /* Build configuration list for PBXNativeTarget "JLToastSwiftSample" */;
+			buildConfigurationList = 031069EB199E0100002886D2 /* Build configuration list for PBXNativeTarget "SwiftToastSwiftSample" */;
 			buildPhases = (
 				031069CB199E0100002886D2 /* Sources */,
 				031069CC199E0100002886D2 /* Frameworks */,
@@ -105,9 +99,9 @@
 			);
 			dependencies = (
 			);
-			name = JLToastSwiftSample;
+			name = SwiftToastSwiftSample;
 			productName = JLToastSwiftSample;
-			productReference = 031069CF199E0100002886D2 /* JLToastSwiftSample.app */;
+			productReference = 031069CF199E0100002886D2 /* SwiftToastSwiftSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -124,7 +118,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 031069CA199E0100002886D2 /* Build configuration list for PBXProject "JLToastSwiftSample" */;
+			buildConfigurationList = 031069CA199E0100002886D2 /* Build configuration list for PBXProject "SwiftToastSwiftSample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -137,7 +131,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				031069CE199E0100002886D2 /* JLToastSwiftSample */,
+				031069CE199E0100002886D2 /* SwiftToastSwiftSample */,
 			);
 		};
 /* End PBXProject section */
@@ -159,12 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				031069F8199E0148002886D2 /* JLToastCenter.swift in Sources */,
 				031069D5199E0100002886D2 /* AppDelegate.swift in Sources */,
 				031069F2199E0128002886D2 /* RootViewController.swift in Sources */,
-				DD0FD3FC19FDB4A800B4E1D1 /* JLToastConfig.swift in Sources */,
-				031069F7199E0148002886D2 /* JLToast.swift in Sources */,
-				031069F9199E0148002886D2 /* JLToastView.swift in Sources */,
+				DD0FD3FC19FDB4A800B4E1D1 /* ToastConfig.swift in Sources */,
+				031069F7199E0148002886D2 /* Toast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,9 +247,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = JLToastSwiftSample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SwiftToastSwiftSample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftToastSwiftSample;
 			};
 			name = Debug;
 		};
@@ -266,16 +258,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = JLToastSwiftSample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SwiftToastSwiftSample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftToastSwiftSample;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		031069CA199E0100002886D2 /* Build configuration list for PBXProject "JLToastSwiftSample" */ = {
+		031069CA199E0100002886D2 /* Build configuration list for PBXProject "SwiftToastSwiftSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				031069E9199E0100002886D2 /* Debug */,
@@ -284,7 +276,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		031069EB199E0100002886D2 /* Build configuration list for PBXNativeTarget "JLToastSwiftSample" */ = {
+		031069EB199E0100002886D2 /* Build configuration list for PBXNativeTarget "SwiftToastSwiftSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				031069EC199E0100002886D2 /* Debug */,

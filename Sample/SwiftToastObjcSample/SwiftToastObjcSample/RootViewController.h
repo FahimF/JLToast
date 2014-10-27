@@ -1,6 +1,6 @@
 //
 //  RootViewController.h
-//  JLToastObjcSample
+//  SwiftToastObjcSample
 //
 //  Created by Fahim Farook on 10/27/14.
 //  Copyright (c) 2014 Suyeol Jeon. All rights reserved.
