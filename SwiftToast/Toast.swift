@@ -11,28 +11,20 @@
 import UIKit
 import QuartzCore
 
-struct ToastViewValue {
-	static var PortraitOffsetY: CGFloat {
-		get { return UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone ? 30 : 60 }
-	}
-	
-	static var LandscapeOffsetY: CGFloat {
-		get { return UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone ? 20 : 40 }
-	}
-}
-
 @objc public class Toast: UIView {
     private var vwBG = UIView()
     private var lblToast = UILabel(frame:CGRectMake(0, 0, 100, 100))
     private var insetText = UIEdgeInsetsMake(6, 10, 6, 10)
 	private var position:Int!
+	private var offset:CGFloat = 0
 	private var delay: NSTimeInterval?
 	private var duration: NSTimeInterval?
 	
-	init(text:String, position:Int, duration:NSTimeInterval, delay:NSTimeInterval) {
+	init(text:String, position:Int, offset:CGFloat, duration:NSTimeInterval, delay:NSTimeInterval) {
         super.init(frame: CGRectMake(0, 0, 100, 100))
 		let opt = ToastConfig.sharedInstance()
 		self.position = position == ToastConfig.positionDefault ? opt.position : position
+		self.offset = offset == -1 ? opt.offset : offset
 		self.duration = duration == ToastConfig.durationDefault ? opt.duration : duration
 		self.delay = delay == ToastConfig.delayDefault ? opt.delay : delay
 		// Background
@@ -61,22 +53,26 @@ struct ToastViewValue {
 	}
 	
 	// MARK:- Class Methods
-	public class func makeToast(text:String, duration:NSTimeInterval = ToastConfig.durationDefault, delay:NSTimeInterval = ToastConfig.delayDefault, position:Int) -> Toast {
-		let toast = Toast(text:text, position:position, duration:duration, delay:delay)
+	public class func makeToast(text:String, duration:NSTimeInterval = ToastConfig.durationDefault, delay:NSTimeInterval = ToastConfig.delayDefault, position:Int, offset:CGFloat) -> Toast {
+		let toast = Toast(text:text, position:position, offset:offset, duration:duration, delay:delay)
 		return toast
 	}
 	
 	// For calling from Objective-C
 	public class func makeToast(text:String) -> Toast {
-		return makeToast(text, duration: ToastConfig.durationDefault, delay: ToastConfig.delayDefault, position:ToastConfig.positionDefault)
+		return makeToast(text, duration: ToastConfig.durationDefault, delay: ToastConfig.delayDefault, position:ToastConfig.positionDefault, offset:-1)
 	}
 	
 	public class func makeToast(text:String, duration:NSTimeInterval) -> Toast {
-		return makeToast(text, duration:duration, delay: ToastConfig.delayDefault, position:ToastConfig.positionDefault)
+		return makeToast(text, duration:duration, delay: ToastConfig.delayDefault, position:ToastConfig.positionDefault, offset:-1)
+	}
+
+	public class func makeToast(text:String, duration:NSTimeInterval, delay:NSTimeInterval) -> Toast {
+		return makeToast(text, duration:duration, delay:delay, position:ToastConfig.positionDefault, offset:-1)
 	}
 	
-	public class func makeToast(text:String, duration:NSTimeInterval, delay:NSTimeInterval) -> Toast {
-		return makeToast(text, duration:duration, delay:delay, position:ToastConfig.positionDefault)
+	public class func makeToast(text:String, duration:NSTimeInterval, delay:NSTimeInterval, position:Int) -> Toast {
+		return makeToast(text, duration:duration, delay:delay, position:position, offset:-1)
 	}
 	
 	// MARK:- Public Methods
@@ -120,7 +116,7 @@ struct ToastViewValue {
         )
         
 		var x: CGFloat
-		var y: CGFloat
+		var y:CGFloat = 0
 		var wd:CGFloat
 		var ht:CGFloat
 		
@@ -133,19 +129,17 @@ struct ToastViewValue {
 		if UIInterfaceOrientationIsLandscape(orientation) && ver < 8.0 {
 			wd = sz.height
 			ht = sz.width
-			y = ToastViewValue.LandscapeOffsetY
 		} else {
 			wd = sz.width
 			ht = sz.height
-			if UIInterfaceOrientationIsLandscape(orientation) {
-				y = ToastViewValue.LandscapeOffsetY
-			} else {
-				y = ToastViewValue.PortraitOffsetY
-			}
 		}
 		x = (wd - width) * 0.5
 		if position == ToastConfig.positionBottom {
-			y = ht - (height + y)
+			y = ht - (height + offset)
+		} else if position == ToastConfig.positionCenter {
+			y = ((ht - height) * 0.5) + offset
+		} else if position == ToastConfig.positionTop {
+			y = offset
 		}
         self.frame = CGRectMake(x, y, width, height);
     }

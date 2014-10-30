@@ -23,6 +23,7 @@ import UIKit
 	public var shadowOpacity:Float = 0.7
 	public var textColour = UIColor.whiteColor()
 	public var baseSize:CGFloat = 14
+	public var offset:CGFloat = 0.0
 
 	var textSize:CGFloat {
 		get {
@@ -60,6 +61,14 @@ import UIKit
 
 	public class var positionBottom:Int {
 		return 2
+	}
+
+	public class var positionCenter:Int {
+		return 3
+	}
+
+	public class var offsetDefault:CGFloat {
+		return -1
 	}
 	
 	// Duration constants

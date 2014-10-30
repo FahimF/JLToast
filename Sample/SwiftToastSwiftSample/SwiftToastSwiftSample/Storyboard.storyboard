@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ne2-ac-hqC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ime-qc-Txl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -8,7 +8,7 @@
         <!--Root View Controller-->
         <scene sceneID="IEI-gQ-iRQ">
             <objects>
-                <viewController id="ne2-ac-hqC" customClass="RootViewController" customModule="JLToastSwiftSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ne2-ac-hqC" customClass="RootViewController" customModule="SwiftToastSwiftSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pRi-tQ-7bP"/>
                         <viewControllerLayoutGuide type="bottom" id="YM2-4Z-pnH"/>
@@ -17,26 +17,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ods-2F-HIu">
-                                <rect key="frame" x="254" y="285" width="92" height="30"/>
-                                <state key="normal" title="Show Toast">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xs6-HF-u8a">
+                                <rect key="frame" x="242" y="247" width="117" height="30"/>
+                                <state key="normal" title="Show Toast 1">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonTapped" destination="ne2-ac-hqC" eventType="touchUpInside" id="xgT-oI-vrh"/>
+                                    <action selector="showToast1" destination="ne2-ac-hqC" eventType="touchUpInside" id="2vP-Gs-Wh7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ods-2F-HIu">
+                                <rect key="frame" x="253" y="285" width="93" height="30"/>
+                                <state key="normal" title="Show Toast 2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showToast2" destination="ne2-ac-hqC" eventType="touchUpInside" id="qP1-fw-Hkj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUS-sO-8KD">
+                                <rect key="frame" x="254" y="323" width="93" height="30"/>
+                                <state key="normal" title="Show Toast 3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showToast3" destination="ne2-ac-hqC" eventType="touchUpInside" id="jGY-Aa-4Ac"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="XUS-sO-8KD" secondAttribute="centerX" id="3tJ-7H-FhL"/>
+                            <constraint firstAttribute="centerX" secondItem="Xs6-HF-u8a" secondAttribute="centerX" id="L74-KF-MEd"/>
                             <constraint firstAttribute="centerX" secondItem="Ods-2F-HIu" secondAttribute="centerX" id="VHm-jE-K5v"/>
+                            <constraint firstItem="Ods-2F-HIu" firstAttribute="top" secondItem="Xs6-HF-u8a" secondAttribute="bottom" constant="8" id="gZG-NG-OQz"/>
+                            <constraint firstItem="XUS-sO-8KD" firstAttribute="top" secondItem="Ods-2F-HIu" secondAttribute="bottom" constant="8" id="gcU-0u-dKc"/>
+                            <constraint firstItem="XUS-sO-8KD" firstAttribute="top" secondItem="Xs6-HF-u8a" secondAttribute="bottom" constant="46" id="jHM-qc-d6I"/>
                             <constraint firstAttribute="centerY" secondItem="Ods-2F-HIu" secondAttribute="centerY" id="n1t-gz-6Mo"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="jHM-qc-d6I"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="bpb-H0-WNJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDz-XC-TId" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1955" y="123"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="B14-bn-QsE">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ime-qc-Txl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="nai-ur-Yzg">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xpz-E3-mwE" kind="relationship" relationship="viewControllers" id="SQj-os-glH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xYZ-eB-8lh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="331" y="123"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Kex-Qu-b1R">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xpz-E3-mwE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="gk1-r9-qW2"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UE9-2C-YSG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ne2-ac-hqC" kind="relationship" relationship="rootViewController" id="UJk-Z9-Oen"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f1J-oa-ex7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="123"/>
         </scene>
     </scenes>
 </document>
